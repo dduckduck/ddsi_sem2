@@ -12,8 +12,6 @@ try:
 except Exception as e:
     print(f"Error al establecer conexión:{e}")
     #:exit(-1)
-finally:
-    conn = None
 
 
 @app.route('/')
@@ -21,10 +19,10 @@ def index():
     cur = conn.cursor()
     books = "Sin datos"
     try:
-        cur.execute('SELECT * FROM books;')
+        cur.execute('SELECT * FROM books')
         books = cur.fetchall()
     except Exception as e:
-        print(f"Error al consultar libreos: {e}")
+        print(f"Error al consultar libros: {e}")
     return render_template('index.html', books=books)
 
 
