@@ -1,11 +1,17 @@
 import os
-import psycopg2
+import oracledb
 
-conn = psycopg2.connect(
-        host="localhost",
-        database="", #nombre de la base de datos
-        user=os.environ[''], #usuario de la bd
-        password=os.environ[''])
+#conf
+usr = input("USUARIO:")
+pwd = usr
+cs = ""   #base de datos
+
+#Conexión
+try:
+    conn = oracledb.connect(user=usr,password=pwd,dsn=cs)
+except Exception as e:
+    print(f"Error al establecer coneixón: {e}\nFin del programa")
+    exit(-1)
 
 cur = conn.cursor()
 
