@@ -8,4 +8,7 @@ RUN pip3 install -r requirements.txt
 EXPOSE 5000
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV DB_USERNAME = "X8904938"
+ENV DB_PASSWORD = "X8904938"
 CMD ["flask","run"]
+
