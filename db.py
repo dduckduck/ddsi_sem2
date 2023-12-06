@@ -1,11 +1,12 @@
 import os
 import oracledb
+import datetime
+#https://docs.oracle.com/javadb/10.8.3.0/devguide/cdevconceptssavepoints.html
 
 #conf
 usr = input("USUARIO:")
 pwd = usr
-cs = ""   #base de datos
-
+cs = "oracle0.ugr.es:1521/practbd.oracle0.ugr.es"   
 #Conexión
 try:
     conn = oracledb.connect(user=usr,password=pwd,dsn=cs)
