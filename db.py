@@ -23,7 +23,7 @@ cur.execute('CREATE TABLE books (id serial PRIMARY KEY,'
                                  'author varchar (50) NOT NULL,'
                                  'pages_num integer NOT NULL,'
                                  'review text,'
-                                 'date_added date DEFAULT CURRENT_TIMESTAMP);'
+                                 'date_added date DEFAULT CURRENT_TIMESTAMP)'
                                  )
 
 # Insertar datos en la tabla 
