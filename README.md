@@ -17,10 +17,16 @@ segundo comando no es más que una etiqueta<br>
 tercer comando envia los archivos al repositorio<br>
 
 # Entorno virtual
-Para ejecutar el fichero para comprobar el entorno virtual y en su caso de que no existe instalarlo 
+Para ejecutar el fichero para comprobar el entorno virtual y en su caso de que no existe instalarlo
 
 ```
 bash install.bash 
+```
+
+Dentro del bash podemos encontrar:<br>
+Para instalar el entorno virtual
+```
+python3 -m venv .venv
 ```
 
 Para activar el entorno virtual
@@ -29,21 +35,33 @@ Para activar el entorno virtual
 source .venv/bin/activate 
 ```
 
-Se requiere entrar como usuario y contraseña existentes en la base de datos
+Instalar las dependencias
 ```
-export DB_USERNAME="XXXXXXXXX"
-export DB_PASSWORD="XXXXXXXXX"
+pip3 install -r requirements.txt
 ```
 
+Desacticar el entorno virtual
+```
+deactivate
+```
+
+
 # Gestion interna
+
+Se requiere entrar como usuario y contraseña existentes en la base de datos
+```
+(.venv) export DB_USERNAME="XXXXXXXXX"
+(.venv) export DB_PASSWORD="XXXXXXXXX"
+```
+
 Para crear la base de datos 
 ```
-python3 db.py
+(.venv) python3 db.py
 ```
 
 Para lanzar la pagina 
 ```
-flask run 
+(.venv) flask run 
 ```
 La pagina estará disponible en "http://localhost:5000/"
 
