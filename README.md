@@ -78,9 +78,3 @@ git merge main
 git checkout main
 git merge tu_rama
 ```
-
-
-
-# Cosas
-en el pdf utiliza '-' para los nombres de algunos atributos y tablas. El caso es que esto causa problemas. De modo que esto resulta en error
-```sql CREATE TABLE Detalle-Pedido(Cpedido INT,Cproducto INT,Cantidad INT, CONSTRAINT dp_primaria PRIMARY KEY (Cpedido,Cproducto));```
