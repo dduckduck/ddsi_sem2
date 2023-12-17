@@ -14,6 +14,10 @@ except Exception as e:
     print(f"Error al establecer conexión:{e}")
     exit(-1)
 
+if conn is None:
+    print("No hay conexion")
+    exit(-1)
+
 
 @app.route('/')
 def index():
