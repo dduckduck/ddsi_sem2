@@ -1,5 +1,6 @@
 import os
 import oracledb
+import db.py
 from flask import Flask, render_template, request, url_for, redirect
 
 cs = "oracle0.ugr.es:1521/practbd.oracle0.ugr.es"
@@ -11,7 +12,7 @@ try:
     conn = oracledb.connect(user=usr,password=pwd,dsn=cs)
 except Exception as e:
     print(f"Error al establecer conexión:{e}")
-    #:exit(-1)
+    exit(-1)
 
 
 @app.route('/')
@@ -48,3 +49,10 @@ def create():
         return redirect(url_for('index'))
 
     return render_template('create.html')
+
+
+
+try:
+    conn.close()
+except Exception as e:
+    print(f"Error al cerrar conexion: {e}")
