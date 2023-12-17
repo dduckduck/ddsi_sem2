@@ -1,6 +1,6 @@
 import os
 import oracledb
-import db.py
+import db
 from flask import Flask, render_template, request, url_for, redirect
 
 cs = "oracle0.ugr.es:1521/practbd.oracle0.ugr.es"
@@ -12,10 +12,6 @@ try:
     conn = oracledb.connect(user=usr,password=pwd,dsn=cs)
 except Exception as e:
     print(f"Error al establecer conexión:{e}")
-    exit(-1)
-
-if conn is None:
-    print("No hay conexion")
     exit(-1)
 
 
