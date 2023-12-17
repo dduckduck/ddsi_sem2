@@ -1,5 +1,4 @@
 import os
-from pickle import FALSE, TRUE
 import oracledb
 
 cs = "oracle0.ugr.es:1521/practbd.oracle0.ugr.es"
